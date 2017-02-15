@@ -1,10 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
     <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="/src/app/controller.js"></script>
 </head>
-<body>
+<body ng-app="VkAnalyzerApp" ng-cloak>
 
+    <div layout="row">
+        <div flex ng-controller="VkGroupController as vkGroupCtr">
+            <md-content layout-padding>
+                <form ng-submit="vkGroupCtr.find()">
+                    <div layout-gt-xs="row">
+                      <md-input-container class="md-block" flex-gt-xs>
+                        <label>Идентификатор группы</label>
+                        <input ng-model="vkGroupCtr.groupUid">
+                          <button type="submit">Go!</button>
+                        <md-button class="md-raised md-primary">Отправить</md-button>
+                      </md-input-container>
+                    </div>
+                </form>
+            </md-content>
+        </div>
+        <div flex="40">
+            [flex="70"]
+        </div>
+        <div flex="40">
+            [flex]
+        </div>
+    </div>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
 </body>
 </html>

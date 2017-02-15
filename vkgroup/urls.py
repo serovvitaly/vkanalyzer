@@ -18,4 +18,5 @@ from vkgroup import views
 
 urlpatterns = [
     url(r'^list/$', views.list),
+    url(r'^find/$', views.find),
 ]

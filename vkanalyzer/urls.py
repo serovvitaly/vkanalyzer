@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^group/', include('vkgroup.urls')),
+    url(r'^api/', include('vkapi.urls')),
 ]
