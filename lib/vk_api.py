@@ -29,11 +29,11 @@ class request:
     def exec(self):
         url = 'https://api.vk.com/method/' + self.method
         params = urllib.parse.urlencode(self.params)
-        # params = params.encode('ascii')
+        params = params.encode('ascii')
         # request = urllib.request.Request(url, params)
-        request = url + '?' + params
+        #request = url + '?' + params
         #print(request)
-        with urllib.request.urlopen(request) as http_response:
+        with urllib.request.urlopen(url, params) as http_response:
             http_response = json.loads(http_response.read().decode("utf-8", "ignore"))
             #print(http_response.read().decode("utf-8", "ignore"))
             self.response = response(http_response)
